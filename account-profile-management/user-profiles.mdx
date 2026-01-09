@@ -1,0 +1,83 @@
+---
+title: User Profiles
+description: Identify your account type and manage your email, password, and reset options in Butternut.
+---
+
+Drawing on the sources, the following documentation has been organised to help you manage your User Profile on the Butternut application.
+
+## Identifying your account type
+
+Your account type determines how you log in and what security steps are required for changes.
+
+- **Locating the badge**: Navigate to the User Profile page (`/dashboard/user-profile.tsx`), where the **Account Information** card displays a badge indicating your account type.
+- **Email account**: If the badge shows **email**, you signed up using a standard email and password. You have access to all three security tabs: **Email**, **Password**, and **Reset**.
+- **Google account**: If the badge shows **google**, you signed in using Google OAuth. By default, you only have the **Email** and **Password** tabs available.
+- **Hybrid status**: If you are a Google user and choose to set an internal password, your account becomes a **hybrid** account. This allows you to sign in with either Google or your email/password combination. Once this is set, future sensitive changes will require password verification.
+
+## Updating your account email address
+
+You can change your primary sign-in and communication address through the **Email** tab.
+
+### Requirements
+
+- **Valid format**: The new email address must be in a valid format.
+- **Not empty**: The email field cannot be empty.
+- **Different from current**: The new email cannot be the same as your current email address.
+
+### For password-protected accounts
+
+1. Enter the new email in the provided field and click **Update Email**.
+2. A **Password Verification** modal appears; enter your current password and click **Verify**.
+3. A yellow confirmation banner appears; click **Confirm** to finalise the change.
+
+### For Google-only accounts
+
+1. Enter the new email and click **Update Email**.
+2. The change is applied immediately (no password verification required).
+
+### Outcome
+
+Your new email becomes the primary address for all platform communications and sign-in attempts.
+
+## Managing your password
+
+Password management is handled within the **Password** tab and varies depending on your initial signup method.
+
+### Setting a password (Google accounts)
+
+If you sign in with Google only, a blue banner will offer to let you set a password to enable email sign-in.
+
+1. Enter your new password in both the **New Password** and **Confirm New Password** fields.
+2. Click **Set Password**.
+
+For this first-time setup, **no current password verification is needed**.
+
+### Changing an existing password
+
+1. Enter your new password and confirmation.
+2. Click **Change Password**.
+3. Complete the two-step verification process in the modal:
+   - **Verify** your current password
+   - **Confirm** the change
+
+### Password requirements
+
+- **Minimum length**: At least 6 characters
+- **Match exactly**: The **New Password** and **Confirm New Password** fields must match exactly
+
+### Password reset flow (single-use link)
+
+For accounts that already have passwords, the **Reset** tab allows you to send a single-use reset link to your registered email if you have forgotten your current credentials.
+
+- **Single-use**: The link can be used once.
+- **Time-limited**: The link expires after **15 minutes**.
+
+---
+
+## Analogy for account types (Secure Vault)
+
+Think of your account as a **Secure Vault**:
+
+- A **Google account** is like entering with a **bank-issued ID**—it’s fast and verified by a third party.
+- Setting a password creates a **personal combination lock** on that same vault.
+- Once you have both (hybrid), you can choose which way to enter, but the bank will now ask for your personal code (password) before letting you change the name on the vault’s deed (email).

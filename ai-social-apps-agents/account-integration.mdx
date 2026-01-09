@@ -1,0 +1,64 @@
+---
+title: Account Integration
+description: Connect social accounts via OAuth and choose posting destinations.
+---
+
+Connecting your social media profiles to the Butternut platform allows AI Agents (such as the Facebook Growth Agent or LinkedIn AI Manager) to automate your brand's social presence by generating and publishing content directly to your accounts.
+
+## Linking social accounts via OAuth
+
+To begin, install the specific social app from the Apps Marketplace onto your chosen website. Once installed, the connection is handled securely through OAuth authentication, which grants Butternut permission to post on your behalf without sharing your login credentials directly with the system.
+
+### LinkedIn connection
+
+1. Click **Connect Account** to be redirected to the LinkedIn OAuth page.
+2. After granting permission, the system exchanges a secure code for an access token.
+3. The platform fetches your profile identity and saves the credentials to your account.
+
+### Instagram connection
+
+Instagram uses a token flow designed for ongoing automation:
+
+1. The system exchanges an initial code for a short-lived token.
+2. That token is converted into a long-lived access token to support continuous automated posting.
+3. The platform fetches your Instagram Business Account name and profile picture.
+
+### Facebook connection
+
+Connecting Facebook requires you to log in and grant the necessary permissions for the app to manage and post to your pages.
+
+---
+
+## Selecting Facebook Business Pages
+
+Because a single Facebook user can manage multiple Business Pages, you must specify which page the AI Agent should target.
+
+### Managed pages list
+
+After connection, the system fetches a list of every Business Page you manage, including:
+
+- Unique page IDs
+- Page-specific access tokens
+
+### Default settings
+
+By default, the first page found in your account is selected as the active posting destination.
+
+### Switching pages
+
+To change the destination:
+
+1. Open the app configuration and go to the **Account** tab.
+2. Choose a different Facebook Page.
+
+This triggers a `switch-page` action that updates the active page ID and access token in the database, ensuring future AI-generated content is published to the correct page.
+
+---
+
+## Analogy for account integration
+
+Think of account integration as handing over a spare key to a professional marketing assistant.
+
+OAuth is like a high-security key card that only allows the assistant to enter the specific rooms (permissions) you’ve approved.
+
+Selecting a Facebook Page is like telling that assistant: “I own several shops in this mall, but I only want you to put posters in the windows of the bakery (a specific Business Page), not the hardware store.”

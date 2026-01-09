@@ -1,0 +1,55 @@
+---
+title: AI Blog Creation
+description: Create blog drafts with topics, SEO keywords, and brand voice.
+---
+
+Butternut AI uses a multi-step guided wizard to transform your ideas into professional, SEO-optimised blog posts. This process begins by defining the intent of your article within the `DescribeBlog` component.
+
+## Defining blog topics and SEO keywords
+
+The foundation of your article is built on the specific topic and keywords you provide to the AI.
+
+- **Blog topic (idea)**: Enter a clear description of what the blog is about in the IDEA text area. This becomes the primary context for the AI “professional blog writer assistant”.
+- **SEO keywords**: Provide a comma-separated list of keywords. These guide the AI in generating five SEO-friendly title suggestions and help ensure the content is discoverable by search engines.
+
+## Setting brand voice and context
+
+To ensure the blog aligns with your business identity, you can customise tone and brand integration.
+
+- **Brand context**: Toggle whether the AI should include your Organisation Name (`org_name`) and specific business context in the generation.
+- **Brand voice**: Select from a multi-select list of tones to define how the article reads, including:
+  - Friendly
+  - Professional
+  - Witty
+  - Heartfelt
+  - Educational
+
+## Targeting specific audiences
+
+Style targeting helps narrow the focus of the blog to reach a specific demographic.
+
+### Gender and age
+
+- **Gender**: Male, Female, or Both
+- **Age groups**: 18–25 up to 45+, or select **All** for broader reach
+
+### Location targeting
+
+For region-specific businesses, use the tag-based interface to add multiple locations. This helps the AI make the content more locally relevant.
+
+## Cost and next steps
+
+- **Credits**: Starting the blog creation process debits **1 AI credit** from your account balance.
+- **Workflow**: After submitting these details via `POST /article-details`, the system proceeds to Step 2 and generates **five** unique title suggestions (with SEO explanations) that you can review or regenerate.
+
+---
+
+## Analogy for AI blog creation (Freelance journalist)
+
+Think of this process as briefing a freelance journalist:
+
+- Providing the topic and keywords is like giving them the headline and the research notes.
+- Selecting the brand voice is like telling them whether to wear a suit (Professional) or a t-shirt (Friendly) while writing.
+- Defining the audience and location is like handing them a map and a photo of your ideal customer so they know exactly who they are speaking to before they ever put pen to paper.
+
+

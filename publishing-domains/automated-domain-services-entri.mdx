@@ -1,0 +1,69 @@
+---
+title: Automated Domain Services (Entri)
+description: Purchase and connect domains automatically, and monitor propagation.
+---
+
+The Automated Domain Services (powered by Entri) provide a streamlined way for you to secure a new web address or connect an existing one without manually editing complex DNS records at your registrar.
+
+## Purchasing and connecting via Entri
+
+The editor provides a guided interface to help you either buy a new domain or link one you already own using Entri.
+
+### Buying a new domain
+
+If you don’t have a domain, select **No** in the Link Domain section to claim or buy a new address. This flow may include a “free domain for 1 year” offer. Clicking purchase launches the Entri UI inside your dashboard.
+
+### Connecting an existing domain
+
+If you already own a domain, selecting the **Automatic** connection method uses Entri to log into your registrar (for example, GoDaddy or Namecheap) and configure the required DNS records for you.
+
+### The linking process
+
+After you complete the steps in the Entri popup:
+
+- The system receives a “success” signal.
+- The domain is normalised (lowercased and cleaned by removing prefixes like `www`).
+- The cleaned value is saved as your **Requested Domain**.
+
+### System tagging
+
+Websites using this service are tagged as **“records added by entri”**, which tells the system to prioritise automatic background verification.
+
+---
+
+## Monitoring purchase and propagation status
+
+Because domain updates can take time to propagate across the internet, the dashboard provides ways to monitor progress.
+
+### Verifying the purchase
+
+After checkout in the Entri window, the dashboard may poll a “check purchase” service to confirm the transaction succeeded—even if a formal background notification (webhook) is still processing.
+
+### Propagation status
+
+Entri reports DNS propagation status back to the platform. You can view domain status (for example, pending vs success) in your domain settings.
+
+### Automatic finalisation
+
+Once Entri reports propagation status as **success**, the platform automatically triggers its internal DNS and SSL pipeline. You don’t need to manually click **Verify**—the system confirms the A-record points to the correct IP and generates your SSL certificate in the background.
+
+### Manual fallback
+
+If you prefer to check yourself, you can visit the Verification step in your dashboard to confirm the A-record matches the required server IP.
+
+---
+
+## Operational notes
+
+- **Normalization**: Domains are stored without `www.` for consistency (for example, `www.example.com` becomes `example.com`).
+- **Security**: This integration uses OAuth. You log into your registrar securely and the platform never sees or stores your registrar password.
+
+---
+
+## Analogy for automated domain services (Locksmith)
+
+Using Entri is like hiring a professional locksmith to change the locks on your new house.
+
+Instead of you trying to take the door apart and fit the new cylinder yourself (manual DNS updates), you give the locksmith access to the front gate. They do the technical work and send you a text message (the success status) once the job is finished and your house is secure.
+
+

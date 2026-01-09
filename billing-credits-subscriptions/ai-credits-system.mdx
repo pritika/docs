@@ -1,0 +1,86 @@
+---
+title: AI Credits System
+description: Track credits, buy top-ups, and manage payment methods.
+---
+
+Based on the sources, the AI Credits System is the engine that powers AI-driven features across the Butternut platform, such as website generation, content creation, and social media automation. As previously categorised, this system is a core component of your Account, Security, and Billing Management.
+
+## Monitoring credit balances & history
+
+The system uses a simple mental model to track your credits:
+
+- **Balance**: Total credits assigned or purchased
+- **Used credits**: Credits consumed
+
+### Credit balance cards
+
+In your Credits Manager dashboard, you’ll typically see two primary indicators:
+
+- **Current Balance (Green)**: Displays your remaining credits available for use (calculated as Total Balance − Used Credits).
+- **Used Credits (Orange)**: Shows the total volume of credits already consumed, often expressed as a percentage of your total allocation.
+
+### Transaction history
+
+Every credit action is logged in a detailed table, including:
+
+- Date
+- Description of the action (for example, “Website generation”)
+- Amount added or debited
+
+### Website-specific tracking
+
+If a specific website triggered the credit usage, the history table includes a link to that website, allowing you to audit which projects are consuming the most resources.
+
+---
+
+## Purchasing one-time credit packages
+
+When your balance is low, you can purchase one-time credit bundles to continue using AI features.
+
+### Available packages
+
+Typical bundles range from **10,000 credits ($10)** up to **250,000 credits ($180)**.
+
+### Purchase process
+
+1. Open the **Add Credits** dialog in the dashboard.
+2. Select your desired package.
+3. Choose a saved payment method or enter a new one.
+4. The system uses Stripe to process the transaction.
+   - If your bank requires **3D Secure** authentication, a prompt will appear to complete the security check.
+
+### Instant delivery
+
+Once the payment is marked as **succeeded** by Stripe:
+
+- Credits are added to your balance immediately
+- Your running balance updates right away
+
+---
+
+## Managing payment methods
+
+Butternut allows you to store multiple cards for “one-click” credit purchases. All card data is handled securely through **Stripe Elements**, ensuring the platform never stores your full card details.
+
+### Adding a card
+
+Click **Add Payment Method** to open a secure form. After entering the card number, expiry, and CVC, the card is tokenized and saved to your account for future use.
+
+### Setting a default method
+
+You can have multiple cards on file but must designate one as the **Default**. This card will be pre-selected for all future credit purchases.
+
+### Deleting a card
+
+To remove an old or expired card, select **Delete** next to the specific payment method. You will be asked for confirmation before the card is permanently detached from your account.
+
+---
+
+## Analogy for the AI Credits System (Pre-paid travel card)
+
+Think of your AI Credits like a **pre-paid travel card**:
+
+- **Current Balance** is the money you have left to spend on fares (website features).
+- **Used Credits** is your digital receipt book showing where you’ve travelled.
+- Purchasing packages is like topping up your card at a station kiosk.
+- Managing payment methods is like choosing which credit card is linked to your “one-tap” payment feature.

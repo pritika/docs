@@ -1,0 +1,78 @@
+---
+title: Article Management
+description: Manage drafts, publishing status, and metadata.
+---
+
+Article Management within Butternut allows you to control the lifecycle of your blog content, from the initial AI-generated draft to its final publication and subsequent updates. These tools are primarily found within the **Blog** section of the website editor’s sidebar.
+
+## Managing article status (Draft vs Published)
+
+Articles have two primary visibility states that determine whether they are accessible to your website visitors.
+
+### Initial generation
+
+When an article is first created using the AI workflow, the system sets it to **Published** automatically once content generation and image validation are complete.
+
+### Manual toggling
+
+Within the Blog sidebar, you can view a list of posts and their current status (**Published** or **Draft**). You can toggle this status manually:
+
+- **Draft**: Hidden from the live website
+- **Published**: Visible in the public feed
+
+### Visibility control
+
+This allows you to prepare content in advance or temporarily remove a post from public view for revisions without deleting it.
+
+---
+
+## Soft-deletes and re-enabling articles
+
+Butternut uses a soft-delete system so content isn’t accidentally lost forever when removed from the dashboard.
+
+### The soft-delete process
+
+Clicking the trash icon on an article card triggers a soft-delete using the `is_deleted` flag in the database. This hides the article from:
+
+- The dashboard list
+- The public website
+
+The document is not permanently erased.
+
+### Re-enabling content
+
+Because the document remains in the database, hidden articles can be re-enabled via the dashboard by reverting the delete flag, making the content manageable again.
+
+### Note on blog page deletion
+
+Individual articles use soft-delete. However, deleting an entire **Blog Page** permanently removes the page and all associated articles from the site.
+
+---
+
+## Editing article data and metadata
+
+You can refine articles at any time to improve SEO or update information through the dedicated Article Editor.
+
+### Accessing the editor
+
+Click an article card in the sidebar to open the editor (typically at a URL like `/dashboard/[websiteId]/blog/[articleId]`).
+
+### Modifiable fields
+
+- **Content**: Edit the main blog text and subheading HTML snippets.
+- **Metadata**: Update the Title, SEO Keywords, and Slug (the URL path).
+- **Visuals**: Replace or update images attached to specific sections of the article.
+
+### Saving changes
+
+When you edit these fields, the system performs `POST /edit-article-data` to update the JSON payload in the database, ensuring changes are persisted and reflected in the site’s metadata.
+
+---
+
+## Analogy for article management (Public noticeboard)
+
+Think of your blog as a public noticeboard:
+
+- Managing status is like deciding whether to keep a notice pinned to the front (Published) or keep it in your folder (Draft) where only you can see it.
+- A soft-delete is like taking a notice down and putting it in a “Records” drawer—it’s gone from the board, but you can pin it back up whenever you like.
+- Editing metadata is like updating the headline or the reference number on the notice so people can find the right information easily.

@@ -1,0 +1,76 @@
+---
+title: Subscription Management
+description: Subscribe to plans, apply promo codes, and cancel subscriptions.
+---
+
+Subscription management on the Butternut platform allows you to scale your website’s capabilities, manage costs with promotional offers, and handle service transitions. The system integrates directly with Stripe and Shopify to ensure secure billing and immediate feature activation.
+
+## Choosing and subscribing to paid plans
+
+Users can select from several tiers depending on their needs for image generation, AI credits, and website hosting.
+
+### Available tiers
+
+- **Free plan**: Includes 5 images per month and standard quality generation.
+- **Starter plan ($10/month)**: Provides 75 images per month, priority support, and custom prompts.
+- **Pro plan ($25/month)**: Designed for high-volume users, offering 200 images per month and bulk generation.
+
+### Subscription process
+
+- To **Go Live**, select a plan via the **Pricing** cards in the dashboard.
+- Once a plan is selected, the system initiates a **Stripe Subscription**.
+  - If immediate payment is required (such as 3D Secure), a **PaymentWidget** appears to handle the transaction securely.
+- **Immediate activation**: Upon successful payment, your website status is updated to **active**, and any previously deactivated pages are automatically restored.
+
+### Overage system (Starter/Pro)
+
+Starter and Pro plans include an overage option where additional images cost **$0.20 each**, capped to prevent unexpected billing spikes:
+
+- **Starter cap**: $50/month
+- **Pro cap**: $100/month
+
+---
+
+## Applying promo codes and checking validity
+
+Before finalising a subscription, you can apply promotional codes to receive discounts on your chosen plan.
+
+### Validation flow
+
+- When you enter a code, the system performs a promo code check via Stripe’s **PromotionCode API**.
+- The system validates whether the code is **valid** and **active**.
+  - If the code is rejected, the UI returns a **“Promo code is not valid”** error.
+
+### Applying the discount
+
+Once validated:
+
+- The coupon metadata is attached to the subscription request.
+- The updated price is reflected in the final checkout.
+
+---
+
+## Cancelling subscriptions and providing feedback
+
+You can cancel your subscription at any time through the **Usage Dashboard**.
+
+### Cancellation procedure
+
+- Initiating a cancellation sets the status to `cancel_at_period_end` in Stripe, meaning you retain access until the end of your current billing cycle.
+- The system requires **a reason and feedback** for leaving.
+  - This data is stored in the `subscription_cancellations` collection for administrative review.
+
+### Impact of cancellation
+
+- Once the period ends, the website configuration is marked as **deactivated**, and hosting access is removed.
+- **Final settlement (Shopify merchants)**: Any outstanding overage charges are calculated and added to the final bill before the subscription is fully terminated.
+
+---
+
+## Analogy for subscription management (High-tech workshop)
+
+Managing your subscription is like renting a high-tech workshop:
+
+- Choosing a plan is deciding which size of tool-kit (Free, Starter, or Pro) you need for your projects.
+- Promo codes act like “first-month-off” vouchers you hand to the landlord.
+- If you decide to cancel your lease, you can keep using the tools until the month you’ve paid for is over, but the landlord will ask you to leave a note in the suggestion box (cancellation feedback) to explain why you’re moving out.

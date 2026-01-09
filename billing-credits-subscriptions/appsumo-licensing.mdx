@@ -1,0 +1,74 @@
+---
+title: AppSumo Licensing
+description: Redeem and link license keys and apply license credits.
+---
+
+As part of your Account, Security, and Billing Management, AppSumo licensing provides a way to activate websites and gain AI credits without a traditional recurring subscription.
+
+## Redeeming and linking AppSumo license keys
+
+The redemption process is handled through a secure OAuth workflow that connects your AppSumo purchase to your Butternut account.
+
+### OAuth exchange
+
+When you redeem your code, the system performs an OAuth exchange to obtain a temporary token and fetch your specific license key.
+
+### Account association
+
+- **Key already linked**: If the license key is already linked to an existing Butternut user, the system logs you into that account.
+- **New key**: If the key is new, a license record is created in the `appsumo_license` collection, storing your license key, status (inactive/active), and tier.
+
+### Tier-based benefits
+
+Your AppSumo tier determines:
+
+- Domain limits
+- The size of your one-time AI credit bundle
+
+### One-time AI credits
+
+Once your license is active and linked to your user ID, the system grants a **one-time** grant of AI credits based on your tier (as long as you haven’t been credited previously).
+
+---
+
+## Utilising license credits to activate websites
+
+Once a license is linked to your account, you can use it to activate websites, moving them from a restricted/deactivated state to a fully functional live state.
+
+### Activation workflow
+
+You can attempt to activate a specific site through the authorised endpoint:
+
+- `POST /utilise-license-credits`
+
+Provide the `website_id` for the site you want to activate.
+
+### Eligibility & exclusions
+
+- **Portfolio sites excluded**: AppSumo licenses cannot be used to activate single-page “portfolio” style sites. These sites are explicitly excluded from the AppSumo activation flow.
+- **Tier capacity enforced**: The system checks your domain limits (defined by your tier) against the number of websites already activated with that license.
+
+### What happens during activation
+
+When a website is successfully activated using a license:
+
+- The website configuration is updated with the `license_key` and marked as **active**
+- Any existing Stripe subscription fields are cleared to prevent double-billing
+- Previously deactivated pages are restored, making site content accessible again
+
+### Error handling
+
+If you attempt to activate more websites than your tier allows, the system returns:
+
+- **“Appsumo License limit exceeded”**
+
+---
+
+## Analogy for AppSumo licensing (Car club membership card)
+
+Think of an AppSumo license like a **lifetime membership card** for a car club:
+
+- Redeeming and linking is like visiting the club office to register your card and prove you bought it.
+- Utilising credits is like deciding which of your cars in the garage gets a **permit sticker**.
+  - Your membership tier decides if you get 1, 3, or 10 stickers.
+  - You can place a sticker on any standard car to make it road-legal (Active), but the club rules state these stickers don’t work on motorcycles (portfolio sites).

@@ -1,0 +1,93 @@
+---
+title: Domain Management
+description: Link domains, verify DNS, and manage SSL certificates.
+---
+
+Managing your website’s domain is a critical step in moving from the editor to a live public presence. These settings are primarily controlled by the `website_config` record, which acts as a state machine tracking whether a domain is requested, verified, and secured with SSL.
+
+## Linking custom domains and DNS verification
+
+To use a domain you already own, link it to your Butternut account and verify your DNS configuration.
+
+### Linking a domain
+
+- Request to link a domain (for example, `example.com`).
+- The system normalises the input by:
+  - Lowercasing it
+  - Stripping any leading `www`
+- Once requested, the domain is stored as `req_domain` with `verified = False`.
+
+### DNS A-record verification
+
+After pointing your domain’s A-record to the Butternut server’s public IP at your registrar, trigger the verification check.
+
+### Automated go-live
+
+If the system resolves the A-record to the correct IP, it:
+
+- Marks the domain as verified
+- Moves the value from `req_domain` to the active domain field
+- Automatically configures Nginx routing so your site is reachable
+
+---
+
+## Butternut-managed subdomains
+
+For users on specific plans (such as Portfolio or free tiers), Butternut can create a managed subdomain (for example, `yourbrand.butternut.ai`).
+
+### Requesting a subdomain
+
+When you request a subdomain, the system:
+
+- Checks that it isn’t already in use
+- Uses AWS Route53 to create A-records for both the root and `www` versions
+
+### Automated setup and preview
+
+- After a **60-second** propagation buffer, the system runs an automatic verification pipeline.
+- Once live, a headless browser captures a screenshot of the new subdomain to generate a preview card in your dashboard.
+
+---
+
+## SSL certificates (provisioning & regeneration)
+
+SSL (Secure Sockets Layer) ensures your site serves content over HTTPS.
+
+### Automatic provisioning
+
+Immediately after a custom domain or subdomain is verified, the system runs a script to generate an SSL certificate. Success is tracked by `ssl_generated = True`.
+
+### Manual regeneration
+
+If you encounter HTTPS/security errors or need to refresh the certificate, you can manually trigger SSL regeneration. This forces the system to re-run the provisioning script for the active domain.
+
+---
+
+## Unlinking and removing domains
+
+If you need to change your web address or stop using a domain, the editor provides several unlinking options.
+
+### Unlinking an active domain
+
+Unlinking sets the active domain to `None` but preserves `req_domain` so you can reference or re-verify it later.
+
+### Clearing live domains
+
+A more permanent “protected” unlinking option clears the live domain field entirely.
+
+### Removing requested domains
+
+If you made a typo or changed your mind about a pending connection, remove the requested domain to clear `req_domain` and reset verification status.
+
+---
+
+## Analogy for domain management (House and address)
+
+Think of your website as a house and the domain as its address:
+
+- Linking a domain is like telling the post office where you want your mail delivered.
+- DNS verification is the post office checking that the signpost (A-record) on your street actually points to your front door.
+- SSL is the security key that ensures only safe, encrypted mail can get through.
+- Unlinking is like taking your name off the letterbox when you decide to move.
+
+

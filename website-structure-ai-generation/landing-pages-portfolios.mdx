@@ -1,0 +1,56 @@
+---
+title: Landing Pages & Portfolios
+description: Build conversion-focused landing pages or a portfolio-style site.
+---
+
+Butternut provides a dedicated single-page website experience designed specifically for Landing Pages and Portfolios. Unlike multipage sites, these focus all content onto a single page to drive specific user actions.
+
+## Selecting conversion-focused modes
+
+When creating a landing page, you can select from several conversion-focused modes. These modes act as “types” that instruct the AI to use specific sections and prompts tailored to your goals.
+
+### Available modes
+
+- **Course**: Designed to showcase educational content and enrolment.
+- **Booking**: Focused on scheduling services or appointments.
+- **Sales Funnel**: Structured to guide visitors through a specific purchasing journey.
+- **Lead Magnet**: Built to capture user information (such as emails) in exchange for an offer.
+- **Generic**: A versatile option for standard landing page needs.
+
+### How it works
+
+The system uses type-specific planning prompts (for example, `LEAD_MAGNET_LANDINGPAGE_SECTION_PROMPT` or `BOOKING_LANDINGPAGE_SECTION_PROMPT`) to ensure the generated sections—such as features, testimonials, and Call-to-Action (CTA) blocks—align with the intended conversion goal.
+
+---
+
+## Providing portfolio-specific data
+
+For a personal brand or resume site, Portfolio mode lets you input specific data that the AI incorporates into a professional narrative.
+
+### Inputs you can provide
+
+- **Resume text**: Your professional history and skills. The AI uses a resume/portfolio planning prompt to build sections around this content.
+- **Professional links**: Add `portfolioLinks` to connect your social media, GitHub, LinkedIn, or personal projects.
+- **Personal images**: Upload a `portfolioImage` (such as a headshot) to be used as a primary visual across the page.
+- **Resume URL**: Link directly to a hosted version of your CV.
+
+---
+
+## The generation process
+
+Once you provide your data and select a mode, the background generator performs several automated steps:
+
+1. **Section planning**: Plans **5–8** content sections (for example, a hero banner, benefits, pricing, and FAQs) based on the selected mode.
+2. **Parallel generation**: Each section’s HTML (including styles and scripts) is generated in parallel to reduce wait time.
+3. **Cohesive styling**: A single theme/style JSON is applied across all sections so the page has a unified, professional look.
+4. **Credit consumption**: On completion, your account is debited based on the number of sections generated.
+
+---
+
+## Analogy for landing pages vs portfolios
+
+Think of a landing page as a highly trained salesperson at a pop-up stall: they have one specific goal (like getting you to sign up for a course or book a time) and they guide you through a single, focused conversation.
+
+A portfolio is like a curated digital gallery of your best work. Instead of selling a product, it “sells” you by using your resume and links to show visitors exactly what you are capable of.
+
+Both live on a single “stage” (page) to ensure the visitor never gets lost.

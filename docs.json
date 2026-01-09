@@ -1,68 +1,119 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Butternut Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7210e3",
+    "light": "#7210e3",
+    "dark": "#7210e3"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Administrative & Financial Management",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Account & Profile Management",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "account-profile-management/user-profiles",
+              "account-profile-management/security-recovery",
+              "account-profile-management/team-collaboration"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Billing, Credits & Subscriptions",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "billing-credits-subscriptions/subscription-management",
+              "billing-credits-subscriptions/ai-credits-system",
+              "billing-credits-subscriptions/appsumo-licensing"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Shopify Merchant Integration",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "shopify-merchant-integration/shopify-dashboard",
+              "shopify-merchant-integration/product-image-tools"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Website Building & Design Suite",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Website Structure & AI Generation",
             "pages": [
-              "api-reference/introduction"
+              "website-structure-ai-generation/website-generation-multipage",
+              "website-structure-ai-generation/landing-pages-portfolios",
+              "website-structure-ai-generation/page-management"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Website Customisation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "website-customisation-sidebar-tools/brand-identity",
+              "website-customisation-sidebar-tools/theme-typography",
+              "website-customisation-sidebar-tools/navigation-header-footer"
+            ]
+          },
+          {
+            "group": "Inline Element & Section Editing",
+            "pages": [
+              "inline-element-section-editing/html-element-editor",
+              "inline-element-section-editing/media-links",
+              "inline-element-section-editing/section-level-controls"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Content & Automation Services",
+        "groups": [
+          {
+            "group": "Blogging & Content Marketing",
+            "pages": [
+              "blogging-content-marketing/ai-blog-creation",
+              "blogging-content-marketing/editorial-workflow",
+              "blogging-content-marketing/article-management"
+            ]
+          },
+          {
+            "group": "AI Social Apps & Agents",
+            "pages": [
+              "ai-social-apps-agents/account-integration",
+              "ai-social-apps-agents/automated-posting-settings",
+              "ai-social-apps-agents/queue-management"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Deployment & User Support",
+        "groups": [
+          {
+            "group": "Publishing & Domains",
+            "pages": [
+              "publishing-domains/domain-management",
+              "publishing-domains/automated-domain-services-entri"
+            ]
+          },
+          {
+            "group": "Interaction & Support",
+            "pages": [
+              "interaction-support/reviews-social-proof",
+              "interaction-support/help-assistance"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Videos",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started-video"
             ]
           }
         ]
@@ -71,52 +122,20 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Butternut AI",
+          "href": "/",
           "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/logo-text.png",
+    "dark": "/images/butternut-logo-white.webp"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+  "integrations": {
+    "intercom": {
+      "appId": "uv4u06dg"
     }
   }
 }

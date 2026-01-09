@@ -1,0 +1,92 @@
+---
+title: Section-Level Controls
+description: Regenerate sections, edit embeds, and manage section backgrounds.
+---
+
+Section-level controls are managed through the Section Editor, a comprehensive tabbed dialog used to modify entire website blocks rather than individual elements. You can access these tools by hovering over a section in the editor and clicking **Edit Section** (pencil icon) or **Edit Images** (image icon).
+
+## Regenerating sections with AI
+
+The **Edit with AI** tab lets you redesign a section using specific text instructions.
+
+### Prompting
+
+You can enter prompts of up to **500 characters** to request specific changes, for example:
+
+- “Make heading larger and bold”
+- “Add a Learn More button at the bottom”
+
+### Credit system
+
+This feature uses the AI credit system:
+
+- A badge in the tab displays your current balance
+- The system warns you if your limit has been reached
+
+### Process
+
+After you submit a prompt:
+
+- The section shows a loading spinner while the AI processes regeneration
+- The section updates automatically with new code and layout
+
+---
+
+## Editing YouTube and iframe embeds
+
+If a section contains `<iframe>` elements (for example, videos or maps), they are managed via the **IFrames** tab.
+
+### Detection
+
+The editor automatically identifies iframes and displays them as cards with:
+
+- A preview
+- A source URL
+
+### YouTube auto-convert
+
+If you paste a standard YouTube URL, the editor automatically:
+
+- Extracts the video ID
+- Converts the URL to the required embed format:
+  - `https://www.youtube.com/embed/{VIDEO_ID}`
+
+This ensures the video plays correctly on your site.
+
+### Management and saving
+
+You can update URLs or remove embeds entirely. Changes are only finalised once you click the main **Save** button on the dialog.
+
+---
+
+## Modifying backgrounds and bulk images
+
+The Section Editor provides centralised control over the visual theme and media within a block.
+
+### Section backgrounds
+
+Under the **Style** tab, you can modify the **Background Colour** for the entire section using:
+
+- Pre-set theme colours
+- A hex code
+- A manual colour picker
+
+### Bulk image management
+
+The **Image** tab provides a grid view of every image used in the section, including standard image tags and background images.
+
+- **Replacement**: Replace images in bulk by using the individual **Edit Image** buttons.
+- **Sourcing**: New images can be sourced via:
+  - File uploads (up to **10MB**)
+  - Unsplash searches
+  - AI-generated images (from within the section dialog)
+
+---
+
+## Analogy for section-level controls (Stage set)
+
+Think of a section as a **stage set** in a theatre:
+
+- Regenerating with AI is like giving the stage director a specific instruction to “make the scene more dramatic,” and the AI instantly rearranges furniture and props to match.
+- IFrame/YouTube editing is like swapping out the television set on stage for a different model or changing the channel it’s playing.
+- Background and bulk editing is like the set designer painting the back wall a new colour or swapping out every framed photo on the set at once to change the theme of the room.

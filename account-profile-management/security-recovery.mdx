@@ -1,0 +1,68 @@
+---
+title: Security & Recovery
+description: Password reset and sensitive-change verification flows.
+---
+
+This documentation outlines the security protocols for the Butternut application, specifically focusing on the mechanisms used to protect user accounts during recovery and sensitive profile updates.
+
+## Initiating a single-use password reset flow
+
+When a user has forgotten their password or needs to regain access to their account, Butternut employs a multi-layered, single-use reset flow to ensure security.
+
+### How it works
+
+- **Requesting a reset**: The user initiates the process via the **Reset** tab or the login screen by providing their email address.
+- **Token generation**: The system creates a temporary record in the `forgot_password_tokens` database and generates a secure JWT (JSON Web Token). This token includes a unique ID (`fp_id`) and a specific expiration timestamp.
+
+### Strict security constraints
+
+- **Time-limited access**: The reset link sent to the user is valid for only **15 minutes**. If it is not used within this window, the token expires.
+- **Single-use guarantee**: To prevent replay attacks, the database record associated with the link is **atomically consumed and deleted** the moment the user successfully resets their password.
+  - Even if the 15-minute window hasn’t passed, the link becomes invalid immediately after one use.
+
+### Finalising the reset
+
+When the user clicks the link, the system validates:
+
+- The token’s **signature**
+- The token’s **presence in the database**
+
+Only then can the user set a new password (minimum **6 characters**).
+
+---
+
+## Performing two-step password verification
+
+For existing email/password accounts, the platform enforces a two-step verification process for sensitive updates to prevent unauthorised changes (for example, if a device is left unattended).
+
+### Trigger events
+
+This verification modal is mandatory when a user attempts to:
+
+- Update their account email address
+- Change their existing password
+
+### Step 1: Verification
+
+- A **Password Verification** modal appears, prompting the user to enter their current password.
+- The system verifies this against the server.
+  - If incorrect, an error message is shown and the user must retry.
+
+### Step 2: Confirmation
+
+- Once the password is verified, a yellow confirmation banner appears asking:
+  - “Are you sure you want to update your [email/password]?”
+- The user must click a final **Confirm** button to apply the changes.
+
+### Exceptions (Google vs hybrid accounts)
+
+- Users who sign in exclusively via **Google OAuth** skip this process initially because they do not have an internal password to verify.
+- Once a Google user sets an internal password, their account becomes **hybrid**, and these security measures apply to them for all future sensitive updates.
+
+---
+
+## Analogy for security recovery
+
+Think of the **single-use password reset** like a one-time digital key that dissolves as soon as it turns the lock once (or if it’s left in the sun for more than 15 minutes).
+
+The **two-step verification** is like a security double-check at a bank: even if you are already inside the building (logged in), the teller still asks for your ID and a signature (password and confirmation) before letting you change the name on the account.

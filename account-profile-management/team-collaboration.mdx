@@ -1,0 +1,89 @@
+---
+title: Team Collaboration
+description: Invite sub-users, manage permissions, and control access.
+---
+
+Team Collaboration allows account owners to share access to their websites with team members while maintaining strict control over what each member can see or change.
+
+## Inviting sub-users to an account
+
+### Invitation process
+
+Owners can invite a sub-user by entering their email address.
+
+### What happens behind the scenes
+
+- **Account detection**: If the invited person already has a Butternut account, the system uses their existing user ID.
+- **New users**: If they are new, the system creates a “bare user” with a pending authentication status.
+
+### Onboarding email
+
+The system automatically sends an invite email containing a unique onboarding URL to the sub-user.
+
+---
+
+## Accepting or rejecting invites
+
+### Accepting an invite
+
+To accept, the sub-user must sign up or log in through the link provided in the invitation email.
+
+Upon successful authentication, the system calls `accept_subuser_invite` to mark the relationship as **active**.
+
+### Accessing owner accounts
+
+Once the invite is accepted, the sub-user can:
+
+- View a list of all owner accounts they have permission to access
+- Switch into those account contexts
+
+### Invite metadata (pre-accept)
+
+Before accepting, users can view invite metadata on the landing page, which identifies the owner’s email and account details.
+
+---
+
+## Assigning per-website permissions
+
+Permissions are assigned as a set of boolean capabilities for each specific website.
+
+### Core permission keys
+
+- **Edit Website**: Allows modifications to the site design and structure.
+- **Edit Blogs**: Grants access to the blog editor.
+  - This can only be enabled if the website already contains a blog page; otherwise, the system will return an error.
+- **Link Domain**: Permits the sub-user to manage custom domain settings and DNS verification.
+- **Settings**: Grants access to general website and configuration settings.
+
+### Reviewing granted permissions
+
+Owners can fetch and review all permissions they have granted to a specific sub-user to ensure their team has the correct level of access.
+
+---
+
+## Revoking or deleting access and permissions
+
+Owners have two ways to remove access depending on the required level of restriction:
+
+### Granular revocation (per website)
+
+Owners can remove permissions for one specific website only, allowing the sub-user to retain access to other sites under the same account.
+
+### Total deletion (remove sub-user)
+
+Removing a sub-user entirely will:
+
+- Immediately revoke all access
+- Delete every permission record associated with that sub-user for the owner’s account
+
+Once deleted, the owner’s account will no longer appear in the sub-user’s “accessible accounts” list.
+
+---
+
+## Analogy for team collaboration (Corporate HQ)
+
+Think of your Butternut account as a **Corporate Headquarters**. You are the Building Owner with a master key.
+
+When you invite a sub-user, you are issuing them a **Digital Keycard**. You can program that keycard to only open specific doors—such as the Marketing Office (Edit Blogs) or the Server Room (Link Domain).
+
+If you want to change their duties, you can reprogram their card for a single room, or you can deactivate the card entirely to remove their access to the building.
