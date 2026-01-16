@@ -3,108 +3,677 @@ title: HTML Element Editor
 description: Edit text, formatting, layout, and visual effects inline.
 ---
 
-The Element Editor is an inline editing toolbar that appears whenever you click on an editable element, such as text, images, or buttons, within the website editor. It provides a floating interface to manage the content, appearance, and physical positioning of individual site components.
+Welcome to the Butternut Inline Editor! This powerful tool allows you to edit any element on your website by simply clicking on it. This guide walks through every feature available in the inline editing toolbar.
 
-## Editing text and inline formatting
+## Table of contents
 
-To change what a specific element says, use the text tools directly from the toolbar.
+1. [Getting Started](#getting-started)
+2. [Main Toolbar Overview](#main-toolbar-overview)
+3. [AI Inline Input](#ai-inline-input)
+4. [Text Content Editor](#text-content-editor)
+5. [Style Editor](#style-editor)
+6. [Text Highlighting](#text-highlighting)
+7. [Layout Editor](#layout-editor)
+8. [Effects Editor](#effects-editor)
+9. [Link Editor](#link-editor)
+10. [Creating New Links](#creating-new-links)
+11. [Image Editor](#image-editor)
+12. [Advanced Features](#advanced-features)
+13. [Saving Your Changes](#saving-your-changes)
 
-- **Inline editing**: Clicking the Pencil icon opens the Text Editor popup, where you can type or paste new text into a textarea to replace the element’s existing content.
-- **Formatting selection**: If you highlight a specific portion of text within an element, formatting buttons appear for **Bold**, **Italic**, and **Underline**. Clicking these wraps the selected text in the corresponding HTML tags to apply the style locally.
-- **Removing formats**: If an entire element is already formatted (for example, a bold header), clicking the highlighted format button strips the formatting and reverts the element to plain text.
+---
 
-## Adjusting typography and alignment
+## Getting started
 
-The Style Editor (the “A” icon) controls the technical properties of your text.
+### How to activate the inline editor
 
-### Font properties
+1. Navigate to any page in edit mode.
+2. Click on any element you want to edit (text, button, image, etc.).
+3. A floating toolbar will appear above or below the selected element.
+4. The element will be outlined to show it’s selected.
 
-- **Font sizes**: Choose from pre-defined sizes such as Small, Body, or heading levels.
-- **Font weights**: Select Light, Normal, Medium, or Bold.
+### Understanding the toolbar
 
-### Case and alignment
+The toolbar appears as a set of icon buttons. Hover over an icon to see its name and what it does.
 
-- **Text case**: Use icon buttons to force UPPERCASE, lowercase, Capitalize, or Normal.
-- **Text alignment**: Toggle alignment between Left, Centre, and Right.
+---
 
-### Colour
+## Main toolbar overview
 
-You can apply colours to:
+When you select an element, the toolbar includes three areas.
 
-- Text
-- Element background
+### Quick actions (left)
 
-Use theme-synced colour circles or a manual colour picker.
+- **AI Input**: Ask AI to modify the element.
+- **Edit Text**: Change the element’s text content.
+- **Edit Style**: Modify fonts, colors, and text styling.
+- **Highlight**: Highlight selected text (only appears when text is selected).
+- **Layout**: Adjust spacing and borders.
+- **Effects**: Add shadows and transforms.
+- **Code Editor**: Edit raw HTML/CSS.
+- **Price**: Edit pricing (for price elements).
+- **Link**: Edit or create links.
+- **Image**: Edit images.
 
-## Applying visual effects
+### Element actions (middle)
 
-For advanced design adjustments, the Effects Editor (sparkle icon) lets you manipulate an element’s visual presence.
+- **Bold / Italic / Underline**: Format selected text.
+- **Duplicate**: Copy the element.
+- **Copy Style**: Copy the element’s styling.
+- **Paste Style**: Apply copied styling to another element.
 
-### Transforms
+### Element management (right)
 
-Use sliders to:
+- **Delete**: Remove the element.
+- **Close**: Deselect the element.
 
-- **Rotate** up to 180 degrees
-- **Scale** from 0.1× to 3×
-- **Skew** along the X-axis
+---
 
-### Box shadows
+## AI inline input
 
-Add depth using:
+### What it does
 
-- Shadow presets (Small through Extra Large)
-- Custom shadow controls (Offset X/Y, Blur, Spread)
+The AI inline input lets you describe changes, and AI will modify the selected element automatically.
 
-### Reset
+### How to use
 
-Use **Reset All Effects** to clear all transforms and shadows in one click.
+1. Select an element.
+2. Find the AI input box on the left side of the toolbar.
+3. Type what you want to change (for example: “Make this text larger and blue”, “Make this button green”).
+4. Press Enter (or click the AI action).
+5. AI applies the requested changes.
 
-## Controlling layout (margin and padding)
+### Tips
 
-The Layout Editor (square icon) manages the space around and within an element.
+- Be specific and use simple, clear language.
+- You can describe colors, sizes, spacing, and content changes.
+- If you don’t like the result, undo and try again.
 
-### Simple mode
+---
 
-Two inputs let you adjust:
+## Text content editor
 
-- **Vertical** spacing (top/bottom together)
-- **Horizontal** spacing (left/right together)
+### Accessing the text editor
 
-This is useful for balanced spacing changes.
+Click the pencil icon (**Edit Text**) in the toolbar.
 
-### Individual mode
+### Editing text
 
-Expands into four separate inputs for precise control:
+1. A popup opens with a text area.
+2. The current text is shown.
+3. Type or paste your new content.
+4. Changes apply as you type.
+
+### What you can do
+
+- Change text content
+- Add or remove text
+- Write multiple lines
+- Paste text from other sources
+
+### Tips
+
+- The text area shows only the text (no HTML tags).
+- Formatting (bold, colors, etc.) is preserved.
+- Click outside the popup to close and keep changes.
+
+---
+
+## Style editor
+
+### Accessing the style editor
+
+Click the **Aa** icon (**Edit Style**) in the toolbar.
+
+### Font size
+
+Common options include:
+
+- Body (16px)
+- Small (14px)
+- Large (18px)
+- Heading 1 (32px)
+- Heading 2 (24px)
+- Heading 3 (20px)
+
+How to use:
+
+1. Find **Font size**.
+2. Open the dropdown.
+3. Select a size to apply instantly.
+
+### Font weight
+
+Common options include:
+
+- Light (300)
+- Normal (400)
+- Medium (500)
+- Bold (700)
+
+How to use:
+
+1. Find **Font weight**.
+2. Select a weight to apply instantly.
+
+### Font family
+
+1. Find **Font family**.
+2. Browse fonts (each shows a preview).
+3. Click a font to apply it immediately.
+
+### Text case (transform)
+
+Options typically include:
+
+- UPPERCASE
+- lowercase
+- Capitalize Each Word
+- Normal
+
+Click the corresponding case button to apply instantly.
+
+### Text decoration
+
+Options include:
+
+- Underline
+- Strikethrough
+
+Click a decoration button to toggle it on/off. Both can be active at once.
+
+### Text color
+
+1. Find **Text color**.
+2. Choose a theme color circle, or open the color picker for a custom color.
+
+Tips:
+
+- Theme colors keep your design consistent.
+- Custom colors provide more flexibility.
+
+### Background color
+
+1. Find **Background**.
+2. Choose a theme color or use the custom picker.
+
+Common uses:
+
+- Emphasize important text
+- Create button-like emphasis
+- Improve readability with contrast
+
+### Text alignment
+
+Use the alignment buttons for:
+
+- Left
+- Center
+- Right
+
+---
+
+## Text highlighting
+
+### When it appears
+
+Highlighting appears when you select text inside a text element.
+
+### How to use
+
+1. Click a text element.
+2. Drag to select specific words or phrases.
+3. Open **Highlight** from the toolbar.
+
+### Features
+
+#### Text color highlighting
+
+1. Select text.
+2. Under **Text color**, choose a color.
+3. The selected text updates instantly.
+
+#### Background highlighting
+
+1. Select text.
+2. Under **Background**, choose a color.
+3. The selected text gets a colored background.
+
+### Tips
+
+- Use highlights sparingly for emphasis.
+- Prefer theme colors for consistency.
+
+---
+
+## Layout editor
+
+### Accessing the layout editor
+
+Click the layout icon in the toolbar.
+
+### What it controls
+
+- Margin (space outside the element)
+- Padding (space inside the element)
+- Border radius (rounded corners)
+
+### Margin controls
+
+#### Simple mode (default)
+
+- Vertical (Top & Bottom)
+- Horizontal (Left & Right)
+
+#### Individual mode
+
+Switch to Individual mode to set:
 
 - Top
 - Right
 - Bottom
 - Left
 
+Notes:
+
+- Values update in real time.
+- Negative values can create overlaps.
+
+### Padding controls
+
+Padding uses the same Simple and Individual controls as margin.
+
+Common uses:
+
+- Add breathing room inside buttons
+- Create space around text in boxes
+- Increase clickable area for links/buttons
+
 ### Border radius
 
-A dedicated input lets you round corners equally by entering a pixel or unit value.
+1. Find **Border radius**.
+2. Enter a value (pixels).
 
-## Element operations: duplicating and styling
+Examples:
 
-The toolbar includes one-click actions to speed up your workflow.
-
-### Duplicating
-
-Clicking the Duplicate icon (double-page symbol) creates an exact clone of the selected element (including its styles and children) and places it immediately after the original.
-
-### Copy and paste styles
-
-- **Copy Style** captures all computed styles of an element (for example, font, spacing, colours).
-- **Paste Style** applies those captured visual attributes to a different selected element.
+- 0: square corners
+- 5–10: lightly rounded
+- 15–20: very rounded
+- 50+: circular for square elements
 
 ---
 
-## Analogy for the Element Editor
+## Effects editor
 
-Think of the Element Editor like a stylist’s kit for a photo shoot:
+### Accessing effects
 
-- Text editing is like changing the script for a model to hold.
-- Typography and styles are like choosing the font for their name tag.
-- Layout and spacing act like a stage manager deciding how much room is between the model and the background (margins) or how tight their clothing fits (padding).
-- Duplicating and copy-pasting styles is like having a “magic camera” that can instantly replicate a specific look or outfit and put it on another person with a single click.
+Click the sparkles icon (**Effects**) in the toolbar.
+
+### Transform effects
+
+#### Rotate
+
+- Range: -180° to +180°
+- Use for subtle tilts or dynamic emphasis
+
+#### Scale
+
+- Range: 0.1× to 3×
+- 1.0× is the original size
+
+#### Skew X
+
+- Range: -45° to +45°
+- Use for modern slanted/perspective effects
+
+### Shadow effects
+
+#### Shadow presets
+
+Choose from presets such as:
+
+- None
+- Small
+- Medium
+- Large
+- Extra Large
+- Inner
+
+#### Custom shadow controls
+
+Adjust:
+
+- Offset X (left/right)
+- Offset Y (up/down)
+- Blur (softness)
+- Spread (expansion)
+
+### Reset all effects
+
+Use **Reset All Effects** to clear transforms and shadows.
+
+### Tips
+
+- Subtle shadows and transforms look more professional.
+- Test effects on mobile and smaller screens.
+
+---
+
+## Link editor
+
+### When to use
+
+The link editor is used when you select an existing link (anchor tag) or a button element.
+
+### Accessing the link editor
+
+1. Click a link or button.
+2. Click the link icon in the toolbar.
+
+### Link types
+
+#### External URL
+
+1. Choose **External URL**.
+2. Enter the full URL including `https://` (for example: `https://www.example.com`).
+
+#### Page links
+
+1. Choose **Select page from your website**.
+2. Pick a page from the list (it updates automatically if page URLs change).
+
+#### Section links (scroll to section)
+
+1. Choose **Select section from this page**.
+2. Pick a section number to scroll to.
+
+#### Email address
+
+1. Choose **Email address**.
+2. Enter the email (for example: `hello@example.com`).
+   - `mailto:` is added automatically.
+
+#### Phone number
+
+1. Choose **Phone number**.
+2. Enter the number (include country code for international numbers).
+
+### Link settings: open in
+
+Choose whether the link opens in:
+
+- Same window (recommended for internal navigation)
+- New window (recommended for external links)
+
+### Payment integration
+
+For pricing buttons, you may see an **Integrate payment** option to configure payment processing.
+
+### Removing links
+
+1. Select the linked element.
+2. Open the link editor.
+3. Click **Remove link**.
+
+---
+
+## Creating new links
+
+Use this to turn normal text or elements into clickable links.
+
+### Access
+
+1. Select a non-link element.
+2. Click the link icon (or link icon with plus, depending on context).
+
+### Method 1: Convert entire element
+
+1. Select the element.
+2. Choose the link type (URL, page, section, email, phone).
+3. Enter the destination.
+4. Click **Save**.
+
+Great for buttons, headings, banners, and cards.
+
+### Method 2: Link selected text only
+
+1. Select a text element.
+2. Highlight the words you want linked.
+3. Create a link and click **Save**.
+
+Great for links inside paragraphs and multiple links in one text block.
+
+### Tips
+
+- Use descriptive link text (avoid “click here”).
+- Test links after creating them.
+
+---
+
+## Image editor
+
+### When it appears
+
+The image editor appears when you select:
+
+- An image element, or
+- An element with a background image
+
+### Accessing the image editor
+
+1. Click an image.
+2. Click the image icon in the toolbar.
+
+### Common options
+
+- Replace image
+- Adjust size
+- Edit alt text (accessibility)
+- Change image URL
+- Upload a new image
+
+### Background images
+
+Depending on the element, you may be able to:
+
+- Change/remove the background image
+- Adjust positioning
+- Modify size/cover settings
+
+### Replace an image
+
+1. Open the image editor.
+2. Click **Upload** (or **Choose file**).
+3. Select an image file.
+4. The new image uploads and replaces the old one.
+
+### Tips
+
+- Use high-quality images with reasonable file sizes.
+- Add descriptive alt text.
+- Keep styles consistent across images.
+
+---
+
+## Advanced features
+
+### Copy and paste styles
+
+**Copy Style**
+
+1. Select an element with styling you want.
+2. Click **Copy Style**.
+
+**Paste Style**
+
+1. Select a different element.
+2. Click **Paste Style**.
+
+Commonly copied properties include:
+
+- Colors (text/background)
+- Font settings (family/size/weight)
+- Spacing (margin/padding)
+- Borders and border radius
+- Shadows and effects
+- Alignment and decoration
+
+### Text formatting (selected text only)
+
+When you highlight text inside an element, you can apply:
+
+- Bold
+- Italic
+- Underline
+
+Click the same formatting button again on formatted text to remove it.
+
+### Duplicate element
+
+1. Select an element.
+2. Click **Duplicate**.
+3. A copy appears right after the original.
+
+### Delete element
+
+1. Select an element.
+2. Click **Delete**.
+3. Confirm the deletion.
+
+Note: Some protected elements (like site-level header/footer structures) may not be deletable in all contexts.
+
+### Code editor
+
+Use the code editor for advanced HTML/CSS changes.
+
+Caution:
+
+- Incorrect code can break your page.
+- Only use it if you’re comfortable with HTML/CSS and test changes carefully.
+
+---
+
+## Saving your changes
+
+### Understanding the save system
+
+Inline edits are not always saved automatically. After making changes, a save bar may appear at the bottom of the screen.
+
+### Save actions
+
+#### Discard
+
+- Discards your unsaved edits and reverts the page back.
+
+#### Save
+
+- Saves changes to a draft (not live yet).
+
+#### Save & Publish / Publish Page
+
+- Saves and publishes changes so they go live immediately.
+
+### Recommended workflow
+
+1. Make edits across multiple elements.
+2. Click **Save** to keep work as a draft.
+3. When everything looks right, click **Publish Page**.
+
+### Before you publish
+
+- Preview on desktop and mobile
+- Test links
+- Review text for typos
+- Confirm images loaded correctly
+
+---
+
+## Troubleshooting
+
+### Toolbar not appearing
+
+- The element may not be editable.
+- Another element may already be selected — click outside and try again.
+- Refresh the page and retry.
+
+### Changes not showing
+
+- Make sure you clicked **Save** or **Publish**.
+- Hard refresh the page (Cmd+Shift+R).
+- Confirm you’re viewing the correct mode (preview vs live).
+
+### Styling looks wrong
+
+- Remove custom styles and reapply gradually.
+- Use **Reset All Effects**.
+- Discard changes and try again.
+
+### Link not working
+
+- Confirm external URLs include `https://`.
+- Verify page links point to existing pages.
+- Double-check email/phone formatting.
+
+---
+
+## Best practices summary
+
+### Do
+
+- Save frequently while you work.
+- Use copy/paste style to keep design consistent.
+- Stick to theme colors where possible.
+- Preview and test before publishing.
+- Use descriptive alt text and link text.
+
+### Don’t
+
+- Overuse effects and heavy shadows.
+- Mix too many fonts/colors on one page.
+- Publish without previewing and testing.
+
+---
+
+## Quick reference
+
+### Most common tasks
+
+**Change text**
+
+1. Click element → **Edit Text** → type new text
+
+**Change color**
+
+1. Click element → **Edit Style** → Text color → pick a color
+
+**Add spacing**
+
+1. Click element → **Layout** → adjust margin/padding
+
+**Make a link**
+
+1. Click element → **Link** → choose type → set destination → **Save**
+
+**Add shadow**
+
+1. Click element → **Effects** → choose a shadow preset
+
+**Copy styling**
+
+1. Click source element → **Copy Style**
+2. Click target element → **Paste Style**
+
+**Delete element**
+
+1. Click element → **Delete** → confirm
+
+---
+
+## Need more help?
+
+- Use **Help** in the sidebar for support.
+- Use **ChatAI** for quick editing questions.
+- Check **Tutorial** for guided walkthroughs.
+
+**Last updated:** January 2026  
+**Version:** 2.0
