@@ -54,7 +54,8 @@
             "pages": [
               "website-customisation-sidebar-tools/brand-identity",
               "website-customisation-sidebar-tools/theme-typography",
-              "website-customisation-sidebar-tools/navigation-header-footer"
+              "website-customisation-sidebar-tools/navigation-header-footer",
+              "website-customisation-sidebar-tools/sidebar-user-guide"
             ]
           },
           {
@@ -62,7 +63,8 @@
             "pages": [
               "inline-element-section-editing/html-element-editor",
               "inline-element-section-editing/media-links",
-              "inline-element-section-editing/section-level-controls"
+              "inline-element-section-editing/section-level-controls",
+              "inline-element-section-editing/section-management"
             ]
           }
         ]
@@ -112,9 +114,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": [
-              "getting-started-video"
-            ]
+            "pages": ["getting-started-video"]
           }
         ]
       }
