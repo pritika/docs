@@ -1,0 +1,128 @@
+---
+title: "SEO"
+description: "Configure robots.txt, sitemap.xml, Google verification, and per-page metadata for better search visibility."
+---
+
+Configure your website for better search engine rankings and visibility.
+
+## Prerequisites
+
+- **Paid subscription**
+- Recommended: a **custom domain** linked (for full SEO controls like robots.txt/sitemap)
+
+## How to access
+
+Navigate to **Dashboard → [Your Website] → SEO**.
+
+## What’s automatically optimized
+
+Butternut automatically handles many SEO fundamentals, including:
+
+- Mobile optimization
+- SSL (after domain linking)
+- Performance best practices
+- Optimized images
+- Schema markup
+- Semantic website structure
+- SEO-friendly AI content patterns
+
+## SEO controls
+
+### Robots.txt
+
+Robots.txt tells search engines what to crawl/index.
+
+How to edit:
+
+1. Expand **Robots.txt**
+2. Update the content
+3. Click **Update**
+
+Default example:
+
+```txt
+User-agent: *
+Allow:/*
+Disallow:
+Sitemap: https://yourdomain.com/sitemap.xml
+```
+
+Common use cases:
+
+- Allow all: `Allow: /*`
+- Block a page path: `Disallow: /private-page`
+- Block all: `Disallow: /`
+
+Note: This typically requires a linked custom domain.
+
+### Sitemap.xml
+
+Sitemaps list your site’s pages for search engines to discover.
+
+How to edit:
+
+1. Expand **Sitemap.xml**
+2. Update the XML
+3. Click **Update**
+
+Example structure:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourdomain.com</loc>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/about</loc>
+  </url>
+</urlset>
+```
+
+Note: This typically requires a linked custom domain.
+
+### Google verification (Search Console)
+
+1. In [Google Search Console](https://search.google.com/search-console), add your website.
+2. Choose **HTML tag** verification.
+3. Copy the verification ID (the value inside `content="..."`).
+4. Paste it into **Google verification ID**.
+5. Click **Update**, then return to Search Console and click **Verify**.
+
+## Pages metadata
+
+For each page, you can edit:
+
+- **Title** (best practice: ~50–60 characters)
+- **Description** (best practice: ~150–160 characters)
+
+How to update:
+
+1. Expand **Pages Metadata**
+2. Choose a page
+3. Edit Title and Description
+4. Click **Update**
+
+## Best practices
+
+- Use unique titles/descriptions per page.
+- Include your primary keyword naturally.
+- Keep robots.txt simple; don’t accidentally block important pages.
+- Submit your sitemap in Search Console after domain setup.
+
+## Troubleshooting
+
+### “Domain linking required”
+
+Some controls require a custom domain. Set up domains first in:
+
+- [Domain Management (Dashboard)](/dashboard-features/domain-management)
+
+### Changes not showing in Google
+
+- Crawling can take 1–2 weeks.
+- Submit your sitemap in Search Console and be patient.
+
+**Last updated:** January 2026  
+**Version:** 1.0
+

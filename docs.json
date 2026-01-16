@@ -110,6 +110,46 @@
         ]
       },
       {
+        "tab": "Dashboard",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["dashboard-features/overview"]
+          },
+          {
+            "group": "Domains",
+            "pages": ["dashboard-features/domain-management"]
+          },
+          {
+            "group": "Marketing & Growth",
+            "pages": [
+              "dashboard-features/subscribers",
+              "dashboard-features/seo",
+              "dashboard-features/analytics"
+            ]
+          },
+          {
+            "group": "Engagement",
+            "pages": ["dashboard-features/custom-chatbot"]
+          },
+          {
+            "group": "Payments",
+            "pages": ["dashboard-features/accept-payments"]
+          },
+          {
+            "group": "Forms & Messages",
+            "pages": [
+              "dashboard-features/form-data",
+              "dashboard-features/contact-us-settings"
+            ]
+          },
+          {
+            "group": "Developer",
+            "pages": ["dashboard-features/custom-scripts"]
+          }
+        ]
+      },
+      {
         "tab": "Videos",
         "groups": [
           {

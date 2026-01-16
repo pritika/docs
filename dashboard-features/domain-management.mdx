@@ -1,0 +1,93 @@
+---
+title: "Domain Management (Dashboard)"
+description: "Link a custom domain, configure DNS, verify connection, and generate SSL from your dashboard."
+---
+
+Connect your own custom domain (for example, `yourcompany.com`) to your Butternut website.
+
+## Prerequisites
+
+- **Paid subscription** (not available on free plan)
+- **Admin access**
+- Access to your domain registrar (GoDaddy, Namecheap, etc.)
+
+## How to access
+
+1. Open your dashboard.
+2. Click **Domains** in the navigation menu.
+
+## Connect your domain
+
+### Step 1: Enter domain information
+
+1. **Email**: enter your email address.
+2. **Website ID**: enter your website ID (found in your dashboard).
+3. **Domain name**: enter your domain (for example, `example.com`).
+   - Don’t include `www.`
+   - Don’t include `https://` or `http://`
+4. Click **Link Domain**.
+
+### Step 2: Configure DNS records
+
+After linking, add the required DNS records at your domain registrar.
+
+Add these **A records**:
+
+| Type | Name | Value                                |
+| ---- | ---- | ------------------------------------ |
+| A    | @    | (IP address shown in your dashboard) |
+| A    | www  | (IP address shown in your dashboard) |
+
+Where to add them (common registrars):
+
+- GoDaddy: Domain Settings → Manage DNS
+- Namecheap: Domain List → Manage → Advanced DNS
+- Google Domains: DNS → Custom records
+- Cloudflare: DNS → Records
+
+### Step 3: Verify connection
+
+1. Wait **15–30 minutes** for DNS propagation (can take up to **48 hours**).
+2. Click **Verify Connection**.
+
+If verification fails:
+
+- Wait longer
+- Double-check records for typos
+- Ensure the record values match your dashboard
+
+### Step 4: Generate SSL certificate
+
+Once verified:
+
+1. Click **Generate SSL**.
+2. Wait **2–5 minutes**.
+3. Your site will be accessible via HTTPS.
+
+## What SSL is (and why it matters)
+
+- Secures your website (`https://`)
+- Encrypts visitor data
+- Required for many payment setups
+- Can improve SEO ranking
+
+## Troubleshooting
+
+### “Records are not updated”
+
+- DNS can take up to 48 hours—wait and retry.
+- Confirm A records are correct and saved.
+
+### SSL generation fails
+
+- Verify the domain first.
+- Wait a few minutes and try again.
+- Contact support if it persists.
+
+### Domain shows “not verified”
+
+- Re-check DNS values and names (`@`, `www`).
+- Wait for propagation and re-verify.
+
+**Last updated:** January 2026  
+**Version:** 1.0

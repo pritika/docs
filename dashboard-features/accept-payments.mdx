@@ -1,0 +1,110 @@
+---
+title: "Accept Payments"
+description: "Connect PayPal, Stripe, or Razorpay to accept payments on your website (one active method at a time)."
+---
+
+Set up payment gateways to accept payments through your website.
+
+## Prerequisites
+
+- **Paid subscription** (not available on free plan)
+- A payment provider account: PayPal, Stripe, or Razorpay
+- Recommended: a custom domain + SSL (especially for live payments)
+
+## How to access
+
+Navigate to **Dashboard → [Your Website] → Accept Payments**.
+
+## Supported payment methods
+
+You can configure:
+
+1. PayPal
+2. Stripe
+3. Razorpay
+
+Important:
+
+- You can save credentials for multiple providers, but **only one payment method can be active at a time**.
+
+## PayPal setup
+
+### One-time payments (basic)
+
+1. Expand **PayPal**.
+2. Enter your PayPal account **Email**.
+3. Click **Save**.
+4. Click **Activate**.
+
+### Recurring payments (advanced)
+
+If you enable recurring payments, you’ll need API credentials from PayPal Developer.
+
+1. Enable **recurring payments**.
+2. Get your **Client ID** and **Secret Key** from [PayPal Developer](https://developer.paypal.com) (Live mode).
+3. Paste credentials into the dashboard fields.
+4. Click **Save**, then **Activate**.
+
+## Stripe setup
+
+### Get your Stripe secret key
+
+1. Go to [Stripe Dashboard](https://dashboard.stripe.com)
+2. Developers → API keys
+3. Copy your **Secret key** (use Live keys for real payments)
+
+### Configure in Butternut
+
+1. Expand **Stripe**.
+2. Paste the **Secret key**.
+3. Click **Save**, then **Activate**.
+
+## Razorpay setup
+
+### Get your Razorpay credentials
+
+1. Go to [Razorpay Dashboard](https://dashboard.razorpay.com)
+2. Settings → API Keys
+3. Copy **Key ID** and **Key Secret**
+
+### Configure in Butternut
+
+1. Expand **Razorpay**.
+2. Enter **Key ID** and **Key Secret**.
+3. Click **Save**, then **Activate**.
+
+## Save vs Activate
+
+- **Save** stores credentials but does not enable payments.
+- **Activate** makes the method live and deactivates any other method.
+
+Recommended workflow:
+
+1. Enter credentials
+2. Save
+3. Activate
+4. Test a transaction
+
+## Security notes
+
+- Never share or publish secret keys.
+- Don’t use test keys in production.
+- Rotate keys if you suspect compromise.
+
+## Troubleshooting
+
+### “Unable to activate payment method”
+
+- Check credentials are correct (no extra spaces).
+- Confirm the provider account is in live mode and fully set up.
+- Verify SSL is enabled on your site.
+
+### Payments not working on the website
+
+- Confirm the method shows **Activated**.
+- Confirm domain + SSL are active.
+- Check provider dashboards for errors.
+
+**Last updated:** January 2026  
+**Version:** 1.0
+

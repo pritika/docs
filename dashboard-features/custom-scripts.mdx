@@ -1,0 +1,129 @@
+---
+title: "Custom Scripts"
+description: "Add third-party scripts, pixels, and HTML snippets to your website (Head or Body placement)."
+---
+
+Add custom JavaScript, tracking codes, or HTML snippets to your website.
+
+## Prerequisites
+
+- **Paid subscription** (not available on free plan)
+- Basic understanding of HTML/JavaScript (or code provided by a trusted service)
+
+## How to access
+
+Navigate to **Dashboard → [Your Website] → Custom Scripts**.
+
+## What custom scripts are used for
+
+Common uses:
+
+- Tracking pixels (Meta/Facebook, Google Ads)
+- Analytics codes
+- Chat widgets (Intercom, Drift)
+- Heatmaps (Hotjar)
+- Verification tags and meta tags
+- Third-party integrations
+
+## Add a script
+
+1. Click **+ Add script**.
+2. Paste your code into **Copy paste your script here**.
+3. Choose **Placement**:
+   - **Head**: for tags that must load early (meta tags, GTM, some analytics)
+   - **Body**: recommended for most scripts (pixels, widgets, non-critical scripts)
+4. Click **Save** to apply.
+
+## Manage scripts
+
+- Each script is a separate accordion item (expand/collapse to edit).
+- You can change placement, update code, or delete a script.
+
+### Delete a script
+
+1. Click the trash icon next to the script.
+
+Important:
+
+- Deletion is immediate and typically cannot be undone.
+
+## Examples (common scripts)
+
+### Google Analytics (GA4)
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+Placement: Head
+
+### Meta/Facebook Pixel
+
+```html
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+```
+
+Placement: Body
+
+### Google Tag Manager (GTM)
+
+```html
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');
+</script>
+<!-- End Google Tag Manager -->
+```
+
+Placement: Head
+
+## Best practices
+
+- Only add scripts from trusted sources.
+- Prefer **Body** placement unless the provider requires **Head**.
+- Test after saving:
+  - Open dev tools → Console
+  - Check for errors
+  - Verify the provider reports the tag as installed
+- Remove unused scripts to keep performance fast.
+
+## Troubleshooting
+
+### Script not working
+
+- Check browser console errors.
+- Confirm placement (Head vs Body).
+- Confirm the site is published/live.
+- Hard refresh (Cmd+Shift+R).
+
+### Site feels slower
+
+- Reduce the number of scripts.
+- Move non-critical scripts to Body.
+
+**Last updated:** January 2026  
+**Version:** 1.0
+

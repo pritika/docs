@@ -1,0 +1,86 @@
+---
+title: "Analytics"
+description: "Connect Google Analytics and Google Tag Manager to track visitors, behavior, and conversions."
+---
+
+Track website visitors and behavior using Google Analytics and Google Tag Manager.
+
+## Prerequisites
+
+- **Paid subscription** (not available on free plan)
+- A Google Analytics and/or Google Tag Manager account
+
+## How to access
+
+Navigate to **Dashboard → [Your Website] → Analytics**.
+
+## Set up Google Analytics
+
+### Step 1: Get your Analytics ID
+
+1. Go to [Google Analytics](https://analytics.google.com)
+2. Create an account/property for your website
+3. Copy your Measurement ID (format: `G-XXXXXXXXXX`)
+
+### Step 2: Add the ID in Butternut
+
+1. Expand **Google Analytics**
+2. Paste the ID into **Google Analytics Id**
+3. Click **Update**
+
+Supported formats:
+
+- GA4: `G-XXXXXXXXXX`
+- Universal Analytics: `UA-XXXXXXXXX-X`
+
+### Step 3: Verify installation
+
+1. Open Google Analytics → **Realtime**
+2. Visit your website in another tab
+3. You should appear as an active user
+
+## Set up Google Tag Manager
+
+### Step 1: Get your GTM container ID
+
+1. Go to [Google Tag Manager](https://tagmanager.google.com)
+2. Create an account/container
+3. Copy the Container ID (format: `GTM-XXXXXXX`)
+
+### Step 2: Add the ID in Butternut
+
+1. Expand **Google Tag Manager**
+2. Paste the ID into **Google Tag Manager Id**
+3. Click **Update**
+
+### Step 3: Configure tags in GTM
+
+In Google Tag Manager, add and publish tags for:
+
+- Google Analytics
+- Google Ads
+- Meta/Facebook Pixel
+- Any other tracking tools you use
+
+## Completion status
+
+The dashboard may show completion counters like:
+
+- Google Analytics: `1/1 completed` when configured
+- Google Tag Manager: `1/1 completed` when configured
+
+## Troubleshooting
+
+### Not seeing data in Google Analytics
+
+- Wait up to 24–48 hours for processed reports (Realtime should be immediate).
+- Confirm the ID is correct (no spaces).
+- Ensure your website is published/live.
+
+### “Website not live yet”
+
+Some dashboards prompt you to subscribe/publish before analytics will collect reliably.
+
+**Last updated:** January 2026  
+**Version:** 1.0
+
