@@ -1,6 +1,10 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "mint",
+  "appearance": {
+    "default": "light",
+    "switch": true
+  },
   "name": "Butternut Documentation",
   "colors": {
     "primary": "#7210e3",
